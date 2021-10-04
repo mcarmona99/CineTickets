@@ -73,3 +73,4 @@ Ref.: [Configuring two-factor authentication](https://docs.github.com/en/authent
 
 Describir un problema a resolver con una lógica de negocio aceptable, cuya resolución esté en gran parte basada en un servidor y que se beneficie de su despligue en la nube, por los distintos casos de uso de datos a procesar y tratar en la misma.
 
+La tarea realizada para este hito se encuentra en el archivo [README.md](https://github.com/mcarmona99/CineTickets/blob/master/README.md) del directorio principal.

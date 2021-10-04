@@ -2,6 +2,8 @@
 
 ## Hito 0 - Descripción de la aplicación a desarrollar
 
+La documentación referente al desarrollo de este hito puede encontrarse en [documentacion/desarrollo_hito_0.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/desarrollo_hito_0.md)
+
 ### Descripción 
 
 **CineTickets** es una aplicación para compra de entradas de cine. El cliente del cine usará la aplicación para comprar entradas, a su vez cada una de las cadenas de cines que estén disponibles en la aplicación podrán usar información recogida a partir de los datos que tenemos de las compras de los clientes. Entre esta información disponible destacan perfiles de clientes, gustos de cada uno de ellos, etc.

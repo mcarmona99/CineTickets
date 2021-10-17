@@ -5,85 +5,137 @@
 La documentación referente al desarrollo de este hito puede encontrarse en
 [documentacion/desarrollo_hito_0.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/desarrollo_hito_0.md)
 
-### Descripción
+### Problema a resolver
 
-**CineTickets** es una aplicación para compra de entradas de cine. El cliente del cine usará la aplicación para comprar
-entradas. A su vez cada una de las cadenas de cine que estén disponibles en la aplicación podrán ver información
-recogida a partir de los datos que tenemos de las compras de los clientes y que la APP usa para recomendaciones
-personalizadas. Entre esta información disponible destacan perfiles de clientes, gustos de cada uno de ellos, etc.
+#### Contexto
 
-La aplicación utiliza esta información de forma interna para mandar correos electrónicos automáticos a los clientes
-recomendando nuevas películas a ver una vez se tiene un perfil concreto para un cliente en cuestión. La creación de este
-perfil forma parte de la lógica de negocio del proyecto. Cuando se consigue un perfil definido, se realiza esta
-recomendación.
+Con la ya vivida situación epidemiológica relativa a la enfermedad del Covid-19, el sector del espectáculo en vivo se ha
+visto fuertemente influenciado por los cambios de medidas de seguridad tales como distanciamiento, que da lugar a una
+limitación de aforo; y la restricción de horarios. A diferencia de la televisión y otros canales de distribución en
+línea (Netflix, HBO, etc.), este sector del espectáculo, donde destacamos cines, teatros, etc. es más afectado debido a
+que propone actividades únicamente en directo, por lo que la asistencia del público es crucial para que este negocio se
+lleve a cabo.
+
+Con esta introducción se plantea un claro problema a resolver por las empresas dedicadas al espectáculo en directo,
+concretamente los cines.
+
+#### Problema
+
+Teniendo en cuenta unas restricciones específicas de distanciamiento de seguridad para asegurar las condiciones
+sanitarias de los asistentes, se quiere maximizar la asistencia del mayor número de personas a una sala de cine,
+agrupando, sin guardar distancia de seguridad, a personas que van juntas a ver la película.
+
+### Descripción de la aplicación
+
+**CineTickets** es una aplicación para compra de entradas de cine. Cuando un usuario de la aplicación interesado en
+comprar entradas para una película realiza una compra, estará haciendo una reserva de butacas para el número de entradas
+que ha comprado, teniendo en cuenta que dichas butacas serán siempre colindantes, es decir, el grupo de personas para el
+que se ha hecho la compra irá sentado junto.
+
+Internamente, para cada compra, la aplicación calculará si ese número de personas cabe en la sala de cine respetando las
+restricciones, teniendo ya una sala de cine con alguna butaca cubierta o totalmente vacía si es la primera compra. En el
+caso de que no haya disponibilidad de asientos, se procederá a una optimización de manera que se resituarán algunos de
+los grupos que ya tienen sus entradas compradas para maximizar el número de asistentes al cine y de esta forma, el
+beneficio económico.
+
+Para cada compra de cada cliente se repetirá este proceso, de forma que llegará un punto en el que no se encontrará una
+solución para la distribución de asientos respetando las restricciones de distanciamiento, con lo que no se podrá
+realizar la venta de dichas entradas a ese cliente.
+
+#### Ejemplo
+
+Supongamos el siguiente ejemplo, tenemos que situar a grupos de personas en una sala respectando una distancia de
+seguridad equivalente a una butaca a la derecha, izquierda, delante y detrás de cada persona:
+
+Tenemos una sala de cine con aforo (sin contar restricciones), para 24 personas, 8 personas por fila.
+
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+
+Suponemos que cierta persona A, compra entradas para un grupo de 3 asistentes a dicha película, en dicha sala (
+asignación de sala según horario). La aplicación comprueba que el grupo de personas cabe en el cine respetando las
+restricciones y asigna butacas para dicho grupo:
+
+| A  | A  |  A |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+
+Suponemos ahora que una persona B, compra entradas para otro grupo de 2 asistentes. La aplicación comprueba que el grupo
+de personas cabe en el cine respetando las restricciones y asigna butacas para dicho grupo:
+
+| A  | A  |  A |   |  B  | B  |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+
+Ahora tenemos que una persona C, compra entradas para otro grupo de 2 asistentes. La aplicación comprueba que el grupo
+de personas cabe en el cine respetando las restricciones y asigna butacas para dicho grupo:
+
+| A  | A  |  A |   |  B  | B  |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |  C | C  |
+|   |   |   |   |   |   |   |   |
+
+Persona D, 4 entradas, mismo proceso:
+
+| A  | A  |  A |   |  B  | B  |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |  C | C  |
+|  D |  D |  D |  D |   |   |   |   |
+
+Persona E, compra 2 entradas. En este caso, no tenemos butacas disponibles para este grupo de personas. La aplicación
+entonces aplica el algoritmo de optimización y comprueba si podríamos meter a dos personas más respetando restricciones,
+con lo que buscamos maximizar el aforo y por tanto, beneficios. Se redistribuyen las butacas de B y C.
+
+| A  | A  |  A |   |    |   | B  |  B |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |  C |  C |   |   |
+|  D |  D |  D |  D |   |   |  E | E  |
+
+Persona F, quiere comprar otras 2 entradas. Ocurre como en el caso anterior, no hay butacas disponibles. La aplicación
+ejecuta el algoritmo, pero en este caso, no se llega a una solución factible respetando las restricciones, entonces, no
+se pueden vender las entradas a F.
+
+Con este ejemplo vemos que la aplicación resuelve el problema planteado, hemos situado a grupos de personas en la sala
+respetando que cada persona de un mismo grupo está junto a otra del mismo grupo y se respeta la distancia de seguridad
+con otro grupo, todo esto, maximizando el número de ventas de entradas (si no hubiésemos recalculado posiciones con la
+compra de C, estaríamos perdiendo dos entradas).
+
+En el ejemplo solo se ha aplicado el algoritmo de redistribución una vez. En ejemplos con salas de mayor tamaño se darán
+muchas más redistribuciones para vender más entradas, con lo que este algoritmo será clave para maximizar beneficios en
+las ventas de un cine.
 
 #### Implicados
 
-Encontramos dos implicados o principales interesados en usar la aplicación, como se ha mencionado en la descripción.
+Encontramos dos implicados o principales interesados en usar la aplicación:
 
 - Por una parte, el **cliente que pretende realizar la compra de entradas**:
 
   Este usuario o implicado podrá comprar una o más de una entrada de cine para una o más películas específicas.
 
 
-- Por otra parte, la **cadena de cines que se oferta** para vender entradas:
+- Por otra parte, la **cadena de cines que se oferta para vender entradas**:
 
-  La empresa ofertará las entradas para cada una de las películas que tenga disponibles. La empresa, al usar la
-  aplicación, podrá ver información de cada uno de sus clientes previamente calculada por la aplicación. Entre esta
-  información destacarían posibles perfiles de cada cliente. Los clientes podrían tener perfiles tales como perfil
-  familiar, si el cliente suele comprar entradas para un número exacto de personas; perfil de pareja, si el cliente
-  suele comprar entradas para dos personas; entre otros. Otra información disponible para la empresa serían los gustos
-  de cada uno de los clientes, o posibles películas que podría gustarle a cada uno realizando agrupaciones. Se podrá
-  obtener también información compleja tal como días de la semana que suele acudir un cliente, actores más vistos, etc.
-
-La información mencionada que la empresa puede consultar relativa a cada cliente, es procesada para realizar
-recomendaciones automáticas de películas, una vez se obtiene una cantidad de información adecuada para realizar dicha
-recomendación.
-
-#### Ejemplo
-
-- Uso de la aplicación por parte del cliente Manuel: compra de 5 entradas para la película Dune para el sábado 09 de
-  octubre de 2021.
-
-
-- Uso de la aplicación por parte de la empresa Kinépolis: obtención de información de Manuel. Consulta de perfil y
-  gustos.
-
-
-- Uso automático para beneficio de la empresa: tras procesar la información que tenemos de Manuel, la aplicación
-  recomienda por medio de un correo electrónico ver Mad Max con una oferta para 5 personas, ya que con su última compra
-  cumple las condiciones para dicha recomendación.
-
-Manuel obtendría las entradas y su beneficio sería ver la película.
-
-La empresa que oferta la película, Kinépolis, tendría como beneficio tener a Manuel con descuentos y ofertas
-personalizadas, de manera automática.
+  La empresa ofertará las entradas para cada una de las películas que tenga disponibles. Dicha empresa actúa como un
+  implicado pasivo, ya que realmente no participa directamente en el uso de la aplicación. La aplicación realiza la
+  distribución de butacas en una sala de cine y manda dicha distribución al cine una vez se ha completado aforo u horas
+  antes de empezar la película en caso de no completar aforo.
 
 ### Lógica de negocio
 
-La lógica de negocio subyacente de la aplicación reside en el cálculo y procesamiento de información obtenida con cada
-compra de entradas de los clientes para realizar recomendaciones personalizadas.
-
-En este apartado, la aplicación deberá asignar para cada cliente un posible perfil. Este perfil será asignado teniendo
-en cuenta cada una de las compras que ha hecho dicho usuario en la APP.
-
-En segundo lugar, la aplicación asignará a cada cliente gustos específicos. Para estos gustos, la APP conectará con API
-de cines y/u obtendrá información de cada una de las películas ofertadas en internet. Entre esta información tomaremos
-el género de la película, actores, etc.
-
-Por otra parte, la aplicación podrá realizar agrupaciones (clustering) de películas para las cuales se comparten los
-mismos clientes.
-
-Cuando tenemos toda esta información obtenida, procedemos a su procesamiento. Si se cumplen los `x` criterios
-establecidos para poder realizar una recomendación, la aplicación creará una recomendación personalizada para un cliente
-específico. Esta recomendación será mandada por correo electrónico al cliente.
-
-Aparte de la posible información a obtener ya detallada, se estudiará qué otro tipo de datos se podrán obtener de los
-clientes y sus respectivas compras.
+La lógica de negocio subyacente de la aplicación reside en la distribución de butacas para cada uno de los grupos de
+personas que han comprado entradas. Esto se realizará implementando y evaluando distintos algoritmos basados en
+heurísticas.
 
 ### Despliegue en la nube
 
-La aplicación será viable de cara a un despliegue en la nube. La APP consistirá en un servidor al que los usuarios, ya
-sean clientes o cines, podrán hacer peticiones para comprar entradas u obtener información de clientes, respectivamente.
-El cálculo de la información mencionada y su procesamiento para la realización de la recomendación personalizada
-automática será realizada en este servidor, siendo esta la parte más importante del proyecto.
+La aplicación será viable de cara a un despliegue en la nube. La APP consistirá en un servidor al que los usuarios,
+clientes, podrán hacer peticiones para comprar entradas para una película.
+
+El servidor realizará para cada compra, las evaluaciones y redistribuciones de salas necesarias. De esta forma, el
+servidor deberá aplicar el algoritmo de distribución a la vez para distintas compras de distintas películas; y también
+de distintas horas, ya que entendemos que una película podrá estar disponible en distintos horarios y por tanto, usando
+distintas salas.

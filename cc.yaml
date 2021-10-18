@@ -1,0 +1,6 @@
+# Fichero que incluye los modelos implementados y su ruta relativa
+ClienteCine: models/ClienteCine.py
+EmpresaCinematografica: models/EmpresaCinematografica.py
+Pelicula: models/Pelicula.py
+PeliculaFecha: models/Pelicula.py
+Sala: models/Sala.py

@@ -1,141 +1,66 @@
 # CineTickets
 
-## Hito 0 - Descripción de la aplicación a desarrollar
+## Descripción de la aplicación a desarrollar
 
-La documentación referente al desarrollo de este hito puede encontrarse en
-[documentacion/desarrollo_hito_0.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/desarrollo_hito_0.md)
+La documentación referente al desarrollo de esta parte puede encontrarse en el directorio
+[documentacion/hito_0](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_0).
 
-### Problema a resolver
+En este directorio podemos encontrar un archivo `desarrollo_hito_0.md` que describe los pasos seguidos para la
+realización del hito 0. A su vez, podemos encontrar un archivo `README.md` que incluye el desarrollo o MVP del hito. En
+este caso se trata de la descripción de la aplicación a desarrollar.
 
-#### Contexto
+## Concretando y planificando el proyecto
 
-Con la ya vivida situación epidemiológica relativa a la enfermedad del Covid-19, el sector del espectáculo en vivo se ha
-visto fuertemente influenciado por los cambios de medidas de seguridad tales como distanciamiento, que da lugar a una
-limitación de aforo; y la restricción de horarios. A diferencia de la televisión y otros canales de distribución en
-línea (Netflix, HBO, etc.), este sector del espectáculo, donde destacamos cines, teatros, etc. es más afectado debido a
-que propone actividades únicamente en directo, por lo que la asistencia del público es crucial para que este negocio se
-lleve a cabo.
+En este apartado se pide realizar una planificación del proyecto por medio de Historias de Usuario, milestones o hitos;
+y tareas asociadas a cada hito e Historia de Usuario.
 
-Con esta introducción se plantea un claro problema a resolver por las empresas dedicadas al espectáculo en directo,
-concretamente los cines.
+En primer lugar, se ha concretado un total de 4 historias de usuario que representan objetivos a cumplir para beneficio
+de distintos implicados en nuestra aplicación. Estas historias de usuario se describen por medio de issues de GitHub y
+son las siguientes:
 
-#### Problema
+- [HU-1](https://github.com/mcarmona99/CineTickets/issues/6): Como usuario asistente al cine, ocasionalmente, necesito
+  ver un catálogo o lista de películas ofertadas en un cine y sus horarios.
 
-Teniendo en cuenta unas restricciones específicas de distanciamiento de seguridad para asegurar las condiciones
-sanitarias de los asistentes, se quiere maximizar la asistencia del mayor número de personas a una sala de cine,
-agrupando, sin guardar distancia de seguridad, a personas que van juntas a ver la película.
+- [HU-2](https://github.com/mcarmona99/CineTickets/issues/7): Como usuario asistente al cine, ocasionalmente, necesito
+  comprar cierto número de entradas para una película en un día y hora concretas.
 
-### Descripción de la aplicación
+- [HU-3](https://github.com/mcarmona99/CineTickets/issues/8): Como empresa cinematográfica, una vez a la semana,
+  necesito añadir nuevas películas ofertadas por mí al catálogo.
 
-**CineTickets** es una aplicación para compra de entradas de cine. Cuando un usuario de la aplicación interesado en
-comprar entradas para una película realiza una compra, estará haciendo una reserva de butacas para el número de entradas
-que ha comprado, teniendo en cuenta que dichas butacas serán siempre colindantes, es decir, el grupo de personas para el
-que se ha hecho la compra irá sentado junto.
+- [HU-4](https://github.com/mcarmona99/CineTickets/issues/9): Como empresa cinematográfica, todos los días, necesito
+  tener una distribución de entradas asociadas a las butacas de una sala de forma que se respetan las restricciones de
+  distanciamiento social entre grupos de personas y se maximiza el número de entradas vendidas, para todas las salas.
 
-Internamente, para cada compra, la aplicación calculará si ese número de personas cabe en la sala de cine respetando las
-restricciones, teniendo ya una sala de cine con alguna butaca cubierta o totalmente vacía si es la primera compra. En el
-caso de que no haya disponibilidad de asientos, se procederá a una optimización de manera que se resituarán algunos de
-los grupos que ya tienen sus entradas compradas para maximizar el número de asistentes al cine y de esta forma, el
-beneficio económico.
+De entre estas historias de usuario, cabe destacar la número 4, ya que es a través de ella donde se implementará la
+mayor parte de la lógica de negocio de la aplicación.
 
-Para cada compra de cada cliente se repetirá este proceso, de forma que llegará un punto en el que no se encontrará una
-solución para la distribución de asientos respetando las restricciones de distanciamiento, con lo que no se podrá
-realizar la venta de dichas entradas a ese cliente.
+Para el correcto cumplimiento de las historias de usuario, se han definido 3 `milestones` o `hitos`, representando 3
+**productos mínimamente viables**, a conseguir a lo largo del desarrollo del proyecto. Estos hitos son los siguientes:
 
-#### Ejemplo
+- [Hito 1 - Modelado de clases](https://github.com/mcarmona99/CineTickets/milestone/1): Producto mínimamente viable que
+  incluye las interfaces de clases que representan los modelos básicos de la aplicación.
 
-Supongamos el siguiente ejemplo, tenemos que situar a grupos de personas en una sala respectando una distancia de
-seguridad equivalente a una butaca a la derecha, izquierda, delante y detrás de cada persona:
+- [Hito 2 - Lógica de negocio básica](https://github.com/mcarmona99/CineTickets/milestone/2): Producto mínimamente
+  viable que incluye el algoritmo a implementar para la redistribución de butacas en sala de cine.
 
-Tenemos una sala de cine con aforo (sin contar restricciones), para 24 personas, 8 personas por fila.
+- [Hito 3 - Lógica de negocio avanzada](https://github.com/mcarmona99/CineTickets/milestone/3): Producto mínimamente
+  viable que expande el uso del algoritmo implementado para casos de uso reales. Se integra el algoritmo con las clases
+  y modelos con ejemplos reales.
 
-|   |   |   |   |   |   |   |   |
-|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |   |
+Para cada uno de estos hitos, se desarrollarán una serie de tareas, representadas mediante `issues` de GitHub que
+garantizarán la finalización del producto mínimamente viable correspondiente a cada hito.
 
-Suponemos que cierta persona A, compra entradas para un grupo de 3 asistentes a dicha película, en dicha sala (
-asignación de sala según horario). La aplicación comprueba que el grupo de personas cabe en el cine respetando las
-restricciones y asigna butacas para dicho grupo:
+Tras definir las HU e hitos, se ha comenzado con el hito 1.
 
-| A  | A  |  A |   |   |   |   |   |
-|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |   |
+Para la consecución de este primer PMV (producto mínimamente viable), se ha comenzado creando una issue en la que se
+especifíca el diagrama de diseño de clases. Esta issue será de referencia para las tareas del hito 1, ya que son
+principalmente desarrollos referentes a la creación de modelos básicos de la aplicación.
 
-Suponemos ahora que una persona B, compra entradas para otro grupo de 2 asistentes. La aplicación comprueba que el grupo
-de personas cabe en el cine respetando las restricciones y asigna butacas para dicho grupo:
+Issue de diseño de clases del
+proyecto: [Diseño de clases del proyecto](https://github.com/mcarmona99/CineTickets/issues/10)
 
-| A  | A  |  A |   |  B  | B  |   |   |
-|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |   |
-
-Ahora tenemos que una persona C, compra entradas para otro grupo de 2 asistentes. La aplicación comprueba que el grupo
-de personas cabe en el cine respetando las restricciones y asigna butacas para dicho grupo:
-
-| A  | A  |  A |   |  B  | B  |   |   |
-|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |  C | C  |
-|   |   |   |   |   |   |   |   |
-
-Persona D, 4 entradas, mismo proceso:
-
-| A  | A  |  A |   |  B  | B  |   |   |
-|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |  C | C  |
-|  D |  D |  D |  D |   |   |   |   |
-
-Persona E, compra 2 entradas. En este caso, no tenemos butacas disponibles para este grupo de personas. La aplicación
-entonces aplica el algoritmo de optimización y comprueba si podríamos meter a dos personas más respetando restricciones,
-con lo que buscamos maximizar el aforo y por tanto, beneficios. Se redistribuyen las butacas de B y C.
-
-| A  | A  |  A |   |    |   | B  |  B |
-|---|---|---|---|---|---|---|---|
-|   |   |   |   |  C |  C |   |   |
-|  D |  D |  D |  D |   |   |  E | E  |
-
-Persona F, quiere comprar otras 2 entradas. Ocurre como en el caso anterior, no hay butacas disponibles. La aplicación
-ejecuta el algoritmo, pero en este caso, no se llega a una solución factible respetando las restricciones, entonces, no
-se pueden vender las entradas a F.
-
-Con este ejemplo vemos que la aplicación resuelve el problema planteado, hemos situado a grupos de personas en la sala
-respetando que cada persona de un mismo grupo está junto a otra del mismo grupo y se respeta la distancia de seguridad
-con otro grupo, todo esto, maximizando el número de ventas de entradas (si no hubiésemos recalculado posiciones con la
-compra de C, estaríamos perdiendo dos entradas).
-
-En el ejemplo solo se ha aplicado el algoritmo de redistribución una vez. En ejemplos con salas de mayor tamaño se darán
-muchas más redistribuciones para vender más entradas, con lo que este algoritmo será clave para maximizar beneficios en
-las ventas de un cine.
-
-#### Implicados
-
-Encontramos dos implicados o principales interesados en usar la aplicación:
-
-- Por una parte, el **cliente que pretende realizar la compra de entradas**:
-
-  Este usuario o implicado podrá comprar una o más de una entrada de cine para una o más películas específicas.
-
-
-- Por otra parte, la **cadena de cines que se oferta para vender entradas**:
-
-  La empresa ofertará las entradas para cada una de las películas que tenga disponibles. Dicha empresa actúa como un
-  implicado pasivo, ya que realmente no participa directamente en el uso de la aplicación. La aplicación realiza la
-  distribución de butacas en una sala de cine y manda dicha distribución al cine una vez se ha completado aforo u horas
-  antes de empezar la película en caso de no completar aforo.
-
-### Lógica de negocio
-
-La lógica de negocio subyacente de la aplicación reside en la distribución de butacas para cada uno de los grupos de
-personas que han comprado entradas. Esto se realizará implementando y evaluando distintos algoritmos basados en
-heurísticas.
-
-### Despliegue en la nube
-
-La aplicación será viable de cara a un despliegue en la nube. La APP consistirá en un servidor al que los usuarios,
-clientes, podrán hacer peticiones para comprar entradas para una película.
-
-El servidor realizará para cada compra, las evaluaciones y redistribuciones de salas necesarias. De esta forma, el
-servidor deberá aplicar el algoritmo de distribución a la vez para distintas compras de distintas películas; y también
-de distintas horas, ya que entendemos que una película podrá estar disponible en distintos horarios y por tanto, usando
-distintas salas.
+Una vez definido el diseño de modelos, se ha procedido a desarrollar la interfaz de cada clase de cada uno de ellos.
+Para ello se han completado las issues [#11](https://github.com/mcarmona99/CineTickets/issues/11)
+, [#12](https://github.com/mcarmona99/CineTickets/issues/12), [#13](https://github.com/mcarmona99/CineTickets/issues/13)
+y [#14](https://github.com/mcarmona99/CineTickets/issues/14), todas referentes al hito 1, como se ha mencionado
+anteriormente.

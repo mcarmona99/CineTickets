@@ -1,5 +1,7 @@
 from typing import Union
 
+from Pelicula import Pelicula
+
 
 class EmpresaCinematografica:
     """Modelo EmpresaCinematográfica."""
@@ -10,7 +12,7 @@ class EmpresaCinematografica:
         Parameters
         ----------
         nombre : str
-            Nombre de la empresa cinematográfica que representa el objeto
+            Nombre de la empresa cinematográfica que representa el objeto.
         peliculas : Union[list, None]
             Lista de películas ofertadas por la empresa cinematográfica.
 

@@ -13,7 +13,7 @@ class Sala:
         Parameters
         ----------
         id_sala : int
-            Nombre de la pelicula.
+            Identificador de la sala.
         n_butacas_ancho : int
             Número de butacas de la sala por fila.
         n_butacas_largo : str

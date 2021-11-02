@@ -52,3 +52,13 @@ En la resolución de la issue, se estudian algunas alternativas y se decide util
 Se puede encontrar más información respectiva a la resolución de la tarea
 en [documentacion/hito_2/gestor_dependencias.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_2/gestor_dependencias.md)
 .
+
+#### [#19 - Se necesita elegir un gestor de tareas](https://github.com/mcarmona99/CineTickets/issues/19)
+
+En esta tarea, se resuelve el problema referente a la especificación de un gestor de tareas para el proyecto.
+
+En la resolución de la issue, se decide utilizar el gestor de tareas `pypyr`.
+
+Se puede encontrar más información respectiva a la resolución de la tarea
+en [documentacion/hito_2/gestor_tareas.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_2/gestor_tareas.md)
+.

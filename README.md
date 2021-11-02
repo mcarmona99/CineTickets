@@ -34,3 +34,21 @@ o hitos; en este caso internos:
   este hito interno consiste en un producto mínimamente viable que incluye al anterior y que realiza la implementación
   de la función que corresponde con el algoritmo básico de redistribución de butacas en una sala de cine. Usamos en este
   PMV el entorno de tests definido en el anterior hito para realizar los tests de la función implementada.
+
+### Interno 1 - Preparación del entorno del proyecto
+
+En este hito, como se ha mencionado anteriormente, se incluyen los gestores de tareas y dependencias y la biblioteca de
+aserciones y marco de pruebas del proyecto.
+
+Las siguientes issues pertenecen al hito:
+
+#### [#22 - Se debe especificar un gestor de dependencias](https://github.com/mcarmona99/CineTickets/issues/22)
+
+En esta tarea, se resuelve el problema referente a la especificación de un gestor de dependencias para el proyecto.
+
+En la resolución de la issue, se estudian algunas alternativas y se decide utilizar el gestor de dependencias y paquetes
+`Poetry`.
+
+Se puede encontrar más información respectiva a la resolución de la tarea
+en [documentacion/hito_2/gestor_dependencias.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_2/gestor_dependencias.md)
+.

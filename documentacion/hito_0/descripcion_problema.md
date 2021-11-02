@@ -1,6 +1,6 @@
 # CineTickets
 
-## Hito 0 - Descripción de la aplicación a desarrollar
+## Descripción de la aplicación a desarrollar
 
 La documentación referente al desarrollo de este hito puede encontrarse en
 [documentacion/hito_0/desarrollo_hito_0.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_0/desarrollo_hito_0.md)

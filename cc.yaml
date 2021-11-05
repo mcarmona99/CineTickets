@@ -1,6 +1,14 @@
-# Fichero que incluye los modelos implementados y su ruta relativa
-ClienteCine: models/ClienteCine.py
-EmpresaCinematografica: models/EmpresaCinematografica.py
-Pelicula: models/Pelicula.py
-PeliculaFecha: models/Pelicula.py
-Sala: models/Sala.py
+# Fichero que incluye información estructural del proyecto
+entidad:
+  - models/ClienteCine.py
+  - models/EmpresaCinematografica.py
+  - models/Pelicula.py
+  - models/Pelicula.py
+  - models/Sala.py
+test:
+  - models/tests
+  - exceptions/tests
+lenguaje: python
+fichero_tareas:
+  - installdeps.yaml
+  - tests.yaml

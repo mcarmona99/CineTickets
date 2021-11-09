@@ -3,7 +3,7 @@
 ## Descripción de la aplicación a desarrollar
 
 La documentación referente al desarrollo de este hito puede encontrarse en
-[documentacion/hito_0/desarrollo_hito_0.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_0/desarrollo_hito_0.md)
+[docs/hito_0/desarrollo_hito_0.md](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_0/desarrollo_hito_0.md)
 
 ### Problema a resolver
 

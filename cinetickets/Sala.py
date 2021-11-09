@@ -1,7 +1,7 @@
 from typing import Union
 
-from exceptions.CineTicketsException import CineTicketsException
-from models.Pelicula import PeliculaFecha
+from cinetickets.CineTicketsException import CineTicketsException
+from cinetickets.Pelicula import PeliculaFecha
 
 
 class Sala:

@@ -1,6 +1,6 @@
 from typing import Union
 
-from models.Pelicula import Pelicula
+from cinetickets.Pelicula import Pelicula
 
 
 class EmpresaCinematografica:

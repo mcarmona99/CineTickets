@@ -3,7 +3,7 @@
 ## Descripción de la aplicación a desarrollar
 
 La documentación referente al desarrollo de esta parte puede encontrarse en el directorio
-[documentacion/hito_0](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_0).
+[docs/hito_0](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_0).
 
 En este directorio podemos encontrar un archivo `desarrollo_hito_0.md` que describe los pasos seguidos para la
 realización del hito 0. A su vez, podemos encontrar un archivo `descripcion_problema.md` que incluye el desarrollo o MVP
@@ -12,7 +12,7 @@ del hito. En este caso se trata de la descripción de la aplicación a desarroll
 ## Concretando y planificando el proyecto
 
 La documentación referente al desarrollo de esta parte puede encontrarse en el directorio
-[documentacion/hito_1](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_1).
+[docs/hito_1](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_1).
 
 En este directorio podemos encontrar un archivo `planificacion.md` que describe los pasos seguidos para realizar la
 primera de planificación del proyecto, donde concretamos hitos e historias de usuario.
@@ -50,7 +50,7 @@ En la resolución de la issue, se estudian algunas alternativas y se decide util
 `Poetry`.
 
 Se puede encontrar más información respectiva a la resolución de la tarea
-en [documentacion/hito_2/gestor_dependencias.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_2/gestor_dependencias.md)
+en [docs/hito_2/gestor_dependencias.md](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_2/gestor_dependencias.md)
 .
 
 #### [#19 - Se necesita elegir un gestor de tareas](https://github.com/mcarmona99/CineTickets/issues/19)
@@ -98,7 +98,7 @@ No dependencies to install or update
 ```
 
 Se puede encontrar más información respectiva a la resolución de la tarea
-en [documentacion/hito_2/gestor_tareas.md](https://github.com/mcarmona99/CineTickets/blob/master/documentacion/hito_2/gestor_tareas.md)
+en [docs/hito_2/gestor_tareas.md](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_2/gestor_tareas.md)
 .
 
 #### [#20 - Biblioteca de aserciones](https://github.com/mcarmona99/CineTickets/issues/20) y [#21 - Marco de pruebas](https://github.com/mcarmona99/CineTickets/issues/21)

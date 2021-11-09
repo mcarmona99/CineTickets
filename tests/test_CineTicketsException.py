@@ -1,4 +1,4 @@
-from exceptions.CineTicketsException import CineTicketsException
+from cinetickets.CineTicketsException import CineTicketsException
 from assertpy import *
 
 def test_CineTicketsException():

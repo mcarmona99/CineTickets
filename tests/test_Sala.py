@@ -1,9 +1,9 @@
 import pytest
 from assertpy import *
 
-from exceptions.CineTicketsException import CineTicketsException
-from models.Pelicula import PeliculaFecha
-from models.Sala import Sala
+from cinetickets.CineTicketsException import CineTicketsException
+from cinetickets.Pelicula import PeliculaFecha
+from cinetickets.Sala import Sala
 
 
 def test_Sala():

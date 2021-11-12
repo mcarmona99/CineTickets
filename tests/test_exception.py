@@ -1,7 +1,7 @@
 import pytest
 from assertpy import *
 
-from cinetickets.CineTicketsException import CineTicketsClientError, CineTicketsServerError, CineTicketsNotFound
+from cinetickets.exception import CineTicketsClientError, CineTicketsServerError, CineTicketsNotFound
 
 
 def test_CineTicketsClientError():

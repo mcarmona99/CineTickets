@@ -1,7 +1,5 @@
 # To execute this pipeline, shell something like:
 # pypyr installdeps
-# or, in this case,
-# poetry run pypyr installdeps
 steps:
   - name: pypyr.steps.cmd
     comment: Installs the project dependencies using poetry.

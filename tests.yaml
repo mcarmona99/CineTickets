@@ -1,7 +1,5 @@
 # To execute this pipeline, shell something like:
 # pypyr tests
-# or, in this case,
-# poetry run pypyr tests
 steps:
   - name: pypyr.steps.cmd
     comment: Run the project tests using pytest.

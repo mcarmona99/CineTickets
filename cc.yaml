@@ -1,13 +1,12 @@
 # Fichero que incluye información estructural del proyecto
 entidad:
-  - models/ClienteCine.py
-  - models/EmpresaCinematografica.py
-  - models/Pelicula.py
-  - models/Pelicula.py
-  - models/Sala.py
+  - cinetickets/ClienteCine.py
+  - cinetickets/EmpresaCinematografica.py
+  - cinetickets/Pelicula.py
+  - cinetickets/exception.py
+  - cinetickets/Sala.py
 test:
-  - models/tests
-  - exceptions/tests
+  - tests
 lenguaje: python
 fichero_tareas:
   - installdeps.yaml

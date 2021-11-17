@@ -39,3 +39,22 @@ caso internos:
   de la función que corresponde con el algoritmo básico de asignación de butacas en una sala de cine. Usamos en este PMV
   el entorno de tests definido en el anterior hito para realizar los tests de la función implementada. Más información
   en [docs/hito_2/pmv_interno_2.md](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_2/pmv_interno_2.md).
+
+Para correcciones de la entrega del proyecto, se crean las siguientes issues:
+
+- [Redistribuir directorios del proyecto para seguir formato estándar](https://github.com/mcarmona99/CineTickets/issues/30)
+- [No se están usando excepciones propias para el proyecto, se usa una sola con códigos](https://github.com/mcarmona99/CineTickets/issues/33)
+- [El diseño de clases Sala y Pelicula no son adecuados para la lógica de negocio](https://github.com/mcarmona99/CineTickets/issues/34)
+- [Actualizar README y archivos de documentación referentes a Interno 1 e Interno 2](https://github.com/mcarmona99/CineTickets/issues/38)
+
+Se crea además la nueva historia de
+usuario: [HU6 - Asistente al cine - Obtener alternativas a las acciones solicitadas](https://github.com/mcarmona99/CineTickets/issues/32)
+.
+
+Además, se avanza también con la
+issue [Diagrama de clases del proyecto](https://github.com/mcarmona99/CineTickets/issues/10).
+
+Se han reabierto las siguientes issues para profundizar en
+investigaciones: [#21](https://github.com/mcarmona99/CineTickets/issues/21)
+, [#20](https://github.com/mcarmona99/CineTickets/issues/20), [#19](https://github.com/mcarmona99/CineTickets/issues/19)
+.

@@ -4,4 +4,4 @@ steps:
   - name: pypyr.steps.cmd
     comment: Run the project tests using pytest.
     in:
-      cmd: pytest
+      cmd: poetry run pytest

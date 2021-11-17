@@ -6,7 +6,6 @@ authors = ["Manuel Carmona Pérez <e.manuelvillar@go.ugr.es>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pypyr = "^4.6.0"
 pytest = "^6.2.5"
 assertpy = "^1.1"
 

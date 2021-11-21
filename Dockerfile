@@ -2,4 +2,4 @@
 FROM python:3.6-alpine3.13
 
 # Instalación del gestor de dependencias
-RUN apk add gcc libc-dev libffi-dev && pip install poetry
+RUN apk add gcc libc-dev libffi-dev && pip install poetry pypyr

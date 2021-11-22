@@ -2,6 +2,12 @@
 # pypyr tests
 steps:
   - name: pypyr.steps.cmd
+    comment: Installs the project dependencies using poetry.
+    in:
+      cmd: pypyr installdeps
+
+  - name: pypyr.steps.cmd
     comment: Run the project tests using pytest.
     in:
+      jump: installdeps
       cmd: poetry run pytest

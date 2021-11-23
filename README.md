@@ -58,3 +58,19 @@ Se han reabierto las siguientes issues para profundizar en
 investigaciones: [#21](https://github.com/mcarmona99/CineTickets/issues/21)
 , [#20](https://github.com/mcarmona99/CineTickets/issues/20), [#19](https://github.com/mcarmona99/CineTickets/issues/19)
 .
+
+## Infraestructura: despliegue de la aplicación y tests automáticos
+
+La documentación referente al desarrollo de esta parte puede encontrarse en el directorio
+[docs/hito_3](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_3).
+
+En esta parte del desarrollo de la aplicación, se realiza el despliegue de la aplicación para poder lanzar los tests
+unitarios de manera automática. Esto lo queremos conseguir con el uso de contenedores de Docker, herramienta útil para
+despliegues repetibles de cualquier aplicación.
+
+Podemos ver la documentación relativa a la subida del contenedor a Docker Hub y actualización
+automática, [aquí]((https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_3/subida_contenedor.md))
+y [aquí]((https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_3/actualizacion_automatica.md)),
+respectivamente. Para la actualización automática, se ha hecho uso de una GitHub Actio. Issue relativa a este
+desarrollo: [#47](https://github.com/mcarmona99/CineTickets/issues/47). PR que la
+resuelve: [#48](https://github.com/mcarmona99/CineTickets/pull/48).

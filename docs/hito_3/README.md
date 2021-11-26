@@ -54,8 +54,8 @@ PR [#52](https://github.com/mcarmona99/CineTickets/pull/52)).
 3.- Contenedor subido correctamente a Docker Hub y documentación de la actualización automática.
 
 Podemos ver la documentación relativa a la subida del contenedor a Docker Hub y actualización
-automática, [aquí]((https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_3/subida_contenedor.md))
-y [aquí]((https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_3/actualizacion_automatica.md)),
+automática, [aquí](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_3/subida_contenedor.md)
+y [aquí](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_3/actualizacion_automatica.md),
 respectivamente. Para la actualización automática, se ha hecho uso de una GitHub Action. Issue relativa a este
 desarrollo: [#47](https://github.com/mcarmona99/CineTickets/issues/47). PR que la
 resuelve: [#48](https://github.com/mcarmona99/CineTickets/pull/48).

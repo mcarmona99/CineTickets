@@ -64,6 +64,6 @@ resuelve: [#48](https://github.com/mcarmona99/CineTickets/pull/48).
 
 Podemos ver la documentación referente al uso de registros alternativos y públicos de contenedores, en este caso GitHub
 Container
-Registry, [en este link]((https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_3/github_container_registry.md))
+Registry, [en este link](https://github.com/mcarmona99/CineTickets/blob/master/docs/hito_3/github_container_registry.md)
 . Issue relativa a esta investigación: [#54](https://github.com/mcarmona99/CineTickets/issues/54). PR que la
 resuelve: [#55](https://github.com/mcarmona99/CineTickets/pull/55).
